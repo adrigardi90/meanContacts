@@ -1,0 +1,56 @@
+.title{
+	font-style: italic;
+}
+
+.alert{
+
+	padding: 0px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#input{
+	  padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 5px;
+     margin: 0; 
+}
+
+#alert{
+	padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+}
+
+.card1{
+    margin-bottom:15px; 
+    height:170px; 
+    /*background-color: #EFF8FB; */
+     background-color:rgba(183, 27, 27, 0.06);
+    cursor: pointer
+}
+
+.card2{
+    margin-bottom:15px; 
+    height:190px; 
+   /* background-color: #EFF8FB;*/
+    background-color:rgba(183, 27, 27, 0.06);
+    cursor: pointer
+
+}
+.card2:hover{
+    margin-bottom:15px; 
+    height:190px; 
+   /* background-color: #EFF8FB;*/
+    background-color:rgba(183, 27, 27, 0.13);
+    cursor: pointer
+}
+
+.card1:hover{
+    margin-bottom:15px; 
+    height:170px; 
+   /* background-color: #EFF8FB;*/
+    background-color:rgba(183, 27, 27, 0.13);
+    cursor: pointer
+}

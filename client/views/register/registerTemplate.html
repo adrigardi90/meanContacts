@@ -1,0 +1,44 @@
+<div layout="row" layout-align="center center" layout-fill style="background-image: url(images/blue3.jpg)">
+	<md-whiteframe class="md-whiteframe-13dp" layout="column" flex="30" layout-padding>
+		<md-content style="background-color:white">
+
+			<div>
+				<h2 style="text-align: center;padding-bottom:10px">REGISTER  ZONE</h2>
+			</div>
+			
+			<md-input-container class="md-block">
+				<md-icon>perm_identity</md-icon>
+				<label>Name</label>
+				<input ng-model="user.name" required>
+			</md-input-container>
+
+			<md-input-container class="md-block">
+				<md-icon>perm_identity</md-icon>
+				<label>Surname</label>
+				<input ng-model="user.surname" required>
+			</md-input-container>
+
+			<md-input-container class="md-block">
+				<md-icon>mail_outline</md-icon>
+				<label>Email</label>
+				<input ng-model="user.email" type="email" required>
+			</md-input-container>
+
+			<md-input-container class="md-block">
+				<md-icon>https</md-icon>
+				<label>Password</label>
+				<input ng-model="user.password" type="password" required>
+			</md-input-container>
+
+			<div style="height:18px;text-align:center;padding-bottom: 25px">
+       			 <alert class="alert alert-danger" ng-show="error" id="alert"><strong>{{message}}</strong></alert>
+      		</div>
+
+			<div layout="row" layout-sm="column" layout-align="center">
+				<md-button class="md-raised" flex="50" flex-sm="100" ng-disabled="!user.name || !user.surname || !user.email || !user.password" ng-click="register(user)">Register</md-button>
+				<md-button class="md-raised md-primary" flex="50" flex-sm="100" ui-sref="login">Back</md-button>
+			</div>
+						
+		</md-content>
+	</md-whiteframe>
+</div>

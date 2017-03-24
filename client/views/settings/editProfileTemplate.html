@@ -1,0 +1,58 @@
+<div layout="column" ng-cloak style="    background-color: rgb(239, 248, 251);">
+
+ 
+<md-content class="md-no-momentum" layout-align="center center" style="    background-color: rgb(239, 248, 251);    width: 60%;    margin-left: 20%;">
+
+      <h2  style="margin-left:15px;text-align:center">
+              <span >EDIT YOUR PROFILE</span>
+            </h2>
+
+    <md-input-container class="md-block">
+        <md-icon>perm_identity</md-icon>
+        <label>Name</label>
+        <input ng-model="user.name" required>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <md-icon>perm_identity</md-icon>
+        <label>Surname</label>
+        <input ng-model="user.surname" required>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <md-icon>mail_outline</md-icon>
+        <label>Email</label>
+        <input ng-model="user.email" type="email" required>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <md-icon>https</md-icon>
+        <label>Password</label>
+        <input ng-model="user.password" type="password" required>
+      </md-input-container>
+
+      <div layout="row">
+
+        <div >
+          <md-button class="md-accent md-raised md-hue-1" flex="10" flex-sm="10" ng-click="update(user)">
+          <md-icon>delete</md-icon>
+        </md-button>
+      </div>
+
+      <div layout="row" layout-sm="column" layout-align="end center">
+
+        <md-button class="md-raised" flex="10" flex-sm="10" ng-click="update(user)">
+          <md-icon>save</md-icon>
+        </md-button>
+        <md-button class="md-raised md-primary" flex="10" flex-sm="10" ui-sref="Home.Main.Menu">
+          <md-icon>arrow_back</md-icon>
+        </md-button>
+       </div> 
+      </div>
+      
+
+  </md-content>
+
+ 
+
+</div>

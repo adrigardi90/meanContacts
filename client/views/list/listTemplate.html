@@ -1,0 +1,67 @@
+<div ng-cloak  layout="column" style="    background-color: rgb(239, 248, 251);" flex>
+
+	<div style="width: 80%;padding-left: 15%;background-color: rgb(239, 248, 251);">
+
+		<h2  style="margin-left:15px;text-align:center">
+		    <span >YOUR CONTACT</span>
+		</h2>
+
+
+
+		  <table class="table table-hover table-striped" style="margin-left: 3%;" at-table at-paginated at-list="contacts" at-config="config">
+          <thead>
+            <tr>
+              <th style="text-align:center">Nombre</th>
+              <th style="text-align:center">NickName</th>
+              <th style="text-align:center">Mobile Phone</th>
+
+              <th style="text-align:center">Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+             <tr ng-repeat="contact in contacts">
+                  <td style="text-align:center" width="20%" nowrap >{{contact.name}}</td>
+                  <td style="text-align:center" width="20%" nowrap>{{contact.nickname}}</td>
+                  <td style="text-align:center" width="20%" nowrap>{{contact.mobilephone}}</td>
+                  <td style="text-align:center" width="1%" nowrap>
+                        <i style="cursor: pointer;" (click)="showDetail(task.id)" class="material-icons">zoom_in</i>
+                        <i style="cursor: pointer;" (click)="showDetail(task.id)" class="material-icons">delete</i>
+                   </td>
+            </tr>
+          </tbody>
+        </table>	
+
+        <nav aria-label="Page navigation" style="    margin-left: 35%;">
+		  <ul class="pagination">
+		    <li>
+		      <a href="#" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <li ng-click="click()"><a href="#" >1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">4</a></li>
+		    <li><a href="#">5</a></li>
+		    <li>
+		      <a href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav> 
+
+
+        <div layout="row" layout-sm="column" layout-align="end center">
+        <md-button class="md-raised md-primary" flex="10" flex-sm="10" ui-sref="Home.Main.Menu">
+          <md-icon>arrow_back</md-icon>
+        </md-button>
+      </div>
+
+    </div>
+
+    
+  
+
+</div>

@@ -1,0 +1,33 @@
+<div layout="row" layout-align="center center" layout-fill style="background-image: url(images/blue3.jpg)">
+  <md-whiteframe class="md-whiteframe-13dp" layout="column" flex="30" layout-padding>
+    <md-content style="background-color:white">
+
+      <div>
+        <h2 style="text-align: center;padding-bottom:12px">INICIO DE SESION</h2> </br>
+      </div>
+      
+      <md-input-container class="md-block " id="input">
+        <md-icon>person</md-icon>
+        <label>Email</label>
+        <input ng-model="user.email" type="email" required>
+      </md-input-container>
+
+      <md-input-container class="md-block" id="input">
+        <md-icon>https</md-icon>
+        <label>Password</label>
+        <input ng-model="user.password" type="password" requiredf>
+      </md-input-container>
+
+
+      <div style="height:18px;text-align:center;padding-bottom: 25px">
+        <alert class="alert alert-danger" ng-show="error" id="alert"><strong>{{message}}</strong></alert>
+      </div>
+  
+      <div layout="row" layout-sm="column">
+        <md-button class="md-raised" flex="50" flex-sm="100" ng-disabled="!user.email || !user.password" ng-click="login(user)">Login</md-button>
+        <md-button class="md-raised md-primary" flex="50" flex-sm="100" ui-sref="register">Registrar</md-button>
+      </div>
+            
+    </md-content>
+  </md-whiteframe>
+</div>

@@ -1,0 +1,23 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "mean stack app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "method-override": "^1.0.0",
+    "mongoose": "^4.6.2",
+    "morgan": "^1.0.0",
+    "nodemon": "^1.2.0",
+    "body-parser": "^1.0.1",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.15.1"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian Garcia Dieguez",
+  "license": "ISC"
+}

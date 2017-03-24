@@ -1,0 +1,21 @@
+{
+  "name": "mean",
+  "description": "mean stack app",
+  "authors": [
+    "Adrian Garcia Dieguez"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-bootstrap": "^2.2.0",
+    "angular-ui-router": "^0.3.1",
+    "angular-material": "^1.1.1",
+    "satellizer": "^0.15.5",
+    "lodash": "^4.16.4",
+    "angular-resource": "^1.5.8"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
+  }
+}
