@@ -1,6 +1,8 @@
-angular.module('mean-app').controller('loginController',['$state','$scope','MainService','$rootScope','$window', function($state, $scope,MainService,$rootScope,$window){
+angular.module('mean-app')
+	.controller('loginController',['$state','$scope','MainService','$rootScope','$window', 
+		function($state, $scope,MainService,$rootScope,$window){
 
-	init = function(){
+	function init(){
 		$scope.error = false;
 		$scope.message = '';
 	}
@@ -14,7 +16,6 @@ angular.module('mean-app').controller('loginController',['$state','$scope','Main
 		}, function error(err){
 			$scope.error = true;
 			$scope.message = err.data.message;
-			console.log(err);
 		});
 	}
 

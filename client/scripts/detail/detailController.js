@@ -1,6 +1,6 @@
 angular.module('mean-app')
-	.controller('detailController',
-		['$window','MainService','$scope','$state','$stateParams', function($window, MainService, $scope, $state, $stateParams){
+	.controller('detailController',['$window','MainService','$scope','$state','$stateParams', 
+		function($window, MainService, $scope, $state, $stateParams){
 
 	var id = $window.sessionStorage.getItem('id');
 
@@ -11,8 +11,6 @@ angular.module('mean-app')
 
 		});
 	}
-
-
 	init();
 
 }]);

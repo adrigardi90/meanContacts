@@ -1,5 +1,6 @@
 angular.module('mean-app')
-	.controller('listController',['$window','MainService','$scope','$state', function($window, MainService, $scope, $state){
+	.controller('listController',['$window','MainService','$scope','$state', 
+		function($window, MainService, $scope, $state){
 
 	var id = $window.sessionStorage.getItem('id');
 	$scope.contacts = [];
