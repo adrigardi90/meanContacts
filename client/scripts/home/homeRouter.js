@@ -8,7 +8,9 @@ angular.module('mean-app').config(function ($stateProvider) {
     }).state('Home.Main', {
     	abstract: true,
        views: {
-      		"downNav": {templateUrl:'views/home/contentTemplate.html'}
+      		"downNav": {
+            templateUrl:'views/home/contentTemplate.html'
+            }
       }
     }).state('Home.Main.Menu', {
     	url:'/menu',
@@ -34,6 +36,11 @@ angular.module('mean-app').config(function ($stateProvider) {
       templateUrl:'views/settings/editProfileTemplate.html',
       controller: 'editProfileController',
       module: 'private'
-    });;
+    }).state('Home.Main.Detail', {
+      url:'/showDetail/:phone',
+      templateUrl:'views/detail/detailTemplate.html',
+      controller: 'detailController',
+      module: 'private'
+    });;;
 
   });

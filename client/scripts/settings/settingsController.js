@@ -10,7 +10,7 @@ angular.module('mean-app').controller('settingsController',['$window','MainServi
 		});
 	}
 
-	var init = function(){
+	function init(){
 		$scope.user = {};
 		var id = $window.sessionStorage.getItem('id');
 		MainService.getInfo(id).then(function success(data){
@@ -33,5 +33,17 @@ angular.module('mean-app').controller('settingsController',['$window','MainServi
 		});
 	}
 
+	function logout(){
+		MainService.logout().then(function success(data){
+			console.log("logout");
+			$window.sessionStorage.removeItem('completeName');
+			$window.sessionStorage.removeItem('id');
+				//$window.localStorage.removeItem('surname');
+			$state.go('login');
+		}, function error(err){
+			console.log("error");
+		})
+	}
+	
 	init();
 }]);

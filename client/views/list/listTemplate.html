@@ -1,8 +1,11 @@
-<div ng-cloak  layout="column" style="    background-color: rgb(239, 248, 251);" flex>
+<div ng-cloak  layout="column" style="background-color: rgb(239, 248, 251);" flex>
 
-	<div style="width: 80%;padding-left: 15%;background-color: rgb(239, 248, 251);">
+	<div style="width: 70%;
+    padding-top: 30px;
+    background-color: rgb(239, 248, 251);
+    margin: 0 auto;">
 
-		<h2  style="margin-left:15px;text-align:center">
+		<h2  style="15px;text-align:center">
 		    <span >YOUR CONTACT</span>
 		</h2>
 
@@ -25,14 +28,14 @@
                   <td style="text-align:center" width="20%" nowrap>{{contact.nickname}}</td>
                   <td style="text-align:center" width="20%" nowrap>{{contact.mobilephone}}</td>
                   <td style="text-align:center" width="1%" nowrap>
-                        <i style="cursor: pointer;" (click)="showDetail(task.id)" class="material-icons">zoom_in</i>
-                        <i style="cursor: pointer;" (click)="showDetail(task.id)" class="material-icons">delete</i>
+                        <i style="cursor: pointer;" ng-click="showDetail(contact.mobilephone)" class="material-icons">zoom_in</i>
+                        <i style="cursor: pointer;"  ng-click="deleteContact(contact.mobilephone)" class="material-icons">delete</i>
                    </td>
             </tr>
           </tbody>
         </table>	
 
-        <nav aria-label="Page navigation" style="    margin-left: 35%;">
+        <nav aria-label="Page navigation" style="margin-left: 35%;">
 		  <ul class="pagination">
 		    <li>
 		      <a href="#" aria-label="Previous">

@@ -8,7 +8,7 @@ angular.module('mean-app').controller('contactController', ['$scope','MainServic
 			console.log(data)
 
 		}, function error(err){
-
+			console.log(err)
 		});
 	}
 

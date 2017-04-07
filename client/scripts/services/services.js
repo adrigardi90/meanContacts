@@ -132,6 +132,34 @@ angular.module('mean-app').factory('MainService',['$http','$q','$auth','$window'
 			return deferred.promise	
 		}
 
+		this.deleteContact = function(id, phone){
+			var deferred = $q.defer();
+			$http({
+				method: 'GET',
+				url: 'http://localhost:3030/api/deletecontact/' + id + '/' + phone
+			}).then(function success(res){
+				deferred.resolve(res);
+			}, function error(err){
+				deferred.reject(err);
+			});
+
+			return deferred.promise;
+		}
+
+		this.getInfoContact = function(id, phone){
+			var deferred = $q.defer();
+			$http({
+				method: 'GET',
+				url: 'http://localhost:3030/api/infocontact/' + id + '/' + phone
+			}).then(function success(res){
+				deferred.resolve(res);
+			}, function error(err){
+				deferred.reject(err);
+			});
+
+			return deferred.promise;
+		}
+
 	}
 
 	return new getData();

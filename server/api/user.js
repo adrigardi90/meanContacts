@@ -12,6 +12,7 @@ router.use(function(req, res,next){
 
 //post register
 router.post('/auth/register', function(req, res){
+
 	var user = new User();
 	user.name = req.body.name;
 	user.surname = req.body.surname;
@@ -19,9 +20,13 @@ router.post('/auth/register', function(req, res){
 	user.password = req.body.password;
 	user.contacts = [];
 
+
 	user.save(function(err){
-		if (err)	
+		if (err){
+			//revisar error al responder
 			res.status(400).send(err);
+		}	
+			
 		res.status(200)
 		   .send({token:service.createToken(user)});
 	});
@@ -66,8 +71,18 @@ router.put('/contact/:_id', function(req, res){
 			user.email = req.body.email;
 		if(req.body.password != null)
 			user.password = req.body.password;
-		if(req.body.contacts != null)
+		if(req.body.contacts != null){
+			
+			for(var i = 0; i< user.contacts.length ; i++){
+				if(user.contacts[i].mobilephone === req.body.contacts.mobilephone){
+					//revisar error al devolver response
+					res.status(200).send({message:'Numero de movil ya existe'});
+				}
+			}
+			console.log("aqui")
 			user.contacts.push(req.body.contacts);
+		}
+			
 
 	user.save(function(err){
 			if(err)
@@ -112,15 +127,60 @@ router.get('/contact/:_id', function(req, res){
 
 });
 
+//Delete one contact of logged user
+router.get('/deletecontact/:_id/:_phone', function(req, res){
+	User.findById(req.params._id, function(err, user){
+		var index;
+
+		if(err)
+			res.status(400).send(err);
+
+		user.contacts.map(function(obj, i){
+			if(obj.mobilephone === req.params._phone)
+				index = i;
+		});
+
+		user.contacts.splice(index,1);
+
+		user.save(function(err){
+			if(err)
+				res.status(400).send(err);
+
+			res.status(200).send({message:'Contact deleted correctly'})
+		});
+	});
+
+});
+
+//Get info one contact of logged user
+router.get('/infocontact/:_id/:_phone', function(req, res){
+	User.findById(req.params._id, function(err, user){
+		var info;
+
+		if(err)
+			res.status(400).send(err);
+
+		user.contacts.map(function(obj){
+			if(obj.mobilephone === req.params._phone)
+				info = obj;
+		});
+
+		res.status(200).send(info);
+
+	});
+
+});
+
+
 //Delete user by id
 router.delete('/contact/:_id', function(req, res){
 	console.log("delete");
-	/*User.remove({_id: req.params._id}, function(err,user){
+	User.remove({_id: req.params._id}, function(err,user){
 		if(err)
 			res.status(400).send(err)
 
 		res.status(200).send("User delete successfully")
-	});*/
+	});
 });
 
 

@@ -1,12 +1,12 @@
-angular.module('mean-app').controller('listController',['$window','MainService','$scope', function($window, MainService, $scope){
+angular.module('mean-app')
+	.controller('listController',['$window','MainService','$scope','$state', function($window, MainService, $scope, $state){
 
-	var init = function(){
-		$scope.contacts = [];
-		var id = $window.sessionStorage.getItem('id');
+	var id = $window.sessionStorage.getItem('id');
+	$scope.contacts = [];
+
+	function init(){				
 		MainService.getInfo(id).then(function success(data){
-			console.log(data)
 			$scope.contacts = data.data.contacts;
-			console.log($scope.contacts)
 		},function error(err){
 
 		});
@@ -14,6 +14,18 @@ angular.module('mean-app').controller('listController',['$window','MainService',
 
 	$scope.click = function(){
 		console.log("click")
+	}
+
+	$scope.deleteContact = function(mobile){
+		MainService.deleteContact(id,mobile).then(function(data){
+			init();
+		},function(err){
+
+		});
+	}
+
+	$scope.showDetail = function(mobile){
+		$state.go('Home.Main.Detail', {phone: mobile});
 	}
 
 	init();
