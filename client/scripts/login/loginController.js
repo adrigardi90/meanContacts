@@ -7,9 +7,11 @@ angular.module('mean-app')
 		$scope.message = '';
 	}
 
+	//Login function
 	$scope.login = function(user){
 		init();
 		MainService.login(user).then(function success(data){
+			//Save data in session storage
 			$window.sessionStorage.setItem('completeName',data.data.name + ' ' + data.data.surname)
 			$window.sessionStorage.setItem('id',data.data.id)
 			$state.go('Home.Main.Menu');

@@ -1,59 +1,90 @@
-<div layout="column" ng-cloak  style="    background-color: rgb(239, 248, 251);">
+<div layout="column" 
+     ng-cloak  
+     style="background-color: rgb(239, 248, 251);">
 
- 
-<md-content class="md-no-momentum" layout-align="center center" style=" background-color: rgb(239, 248, 251);
-    width: 60%;
-    margin: 0 auto;">
+  <md-content class="md-no-momentum" 
+              layout-align="center center" 
+              style=" background-color: rgb(239, 248, 251); width: 60%; margin: 0 auto;">
 
-    <h2  style="text-align:center">
-		    <span >NEW CONTACT</span>
-		</h2>
+      <h2 style="text-align:center">
+  		    <span> NEW CONTACT </span>
+  		</h2>
 
-    <md-input-container class="md-icon-float md-block">
-      <!-- Use floating label instead of placeholder -->
-      <label>Complete name</label>
-      <md-icon class="name">perm_identity</md-icon>
-      <input ng-model="contact.name" type="text">
-    </md-input-container>
+      <md-input-container class="md-icon-float md-block">
 
-    <md-input-container class="md-icon-float md-block">
-      <!-- Use floating label instead of placeholder -->
-      <label>Nickname</label>
-      <md-icon class="name">perm_identity</md-icon>
-      <input ng-model="contact.nickname" type="text">
-    </md-input-container>
+          <!-- Use floating label instead of placeholder -->
+          <label> Complete name </label>
+          <md-icon class="name">perm_identity</md-icon>
+          <input ng-model="contact.name" 
+                 type="text">
 
-    <md-input-container md-no-float class="md-block">
-      <md-icon>stay_current_portrait</md-icon>
-      <input ng-model="contact.mobilephone" type="number" placeholder="Mobile Number (required)" ng-required="true">
-    </md-input-container>
+      </md-input-container>
 
-    <md-input-container md-no-float class="md-block">
-      <md-icon>phone</md-icon>
-      <input ng-model="contact.phone" type="text" placeholder="Phone Number">
-    </md-input-container>
+      <md-input-container class="md-icon-float md-block">
 
-    <md-input-container class="md-block">
-      <!-- Use floating placeholder instead of label -->
-      <md-icon class="email">email</md-icon>
-      <input ng-model="contact.email" type="email" placeholder="Email (required)" ng-required="true">
-    </md-input-container>
+          <label> Nickname </label>
+          <md-icon class="name">perm_identity</md-icon>
+          <input ng-model="contact.nickname" 
+                 type="text">
 
-    <md-input-container class="md-block">
-      <md-icon>location_on</md-icon>
-      <input ng-model="contact.address" type="text" placeholder="Address" >     
-    </md-input-container>
+      </md-input-container>
 
- 	<div layout="row" layout-sm="column" layout-align="end center">
-        <md-button class="md-raised" flex="10" flex-sm="10" ng-disabled="!contact.email || !contact.mobilephone" ng-click="create(contact)">
-          <md-icon>save</md-icon>
+      <md-input-container md-no-float class="md-block">
+
+          <md-icon> stay_current_portrait </md-icon>
+          <input ng-model="contact.mobilephone" 
+                 type="number" 
+                 placeholder="Mobile Number (required)" 
+                 ng-required="true">
+
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+
+          <md-icon> phone </md-icon>
+          <input ng-model="contact.phone" 
+                 type="text" 
+                 placeholder="Phone Number">
+
+      </md-input-container>
+
+      <md-input-container class="md-block">
+          
+          <md-icon class="email"> email </md-icon>
+          <input ng-model="contact.email" 
+                 type="email" 
+                 placeholder="Email (required)" 
+                 ng-required="true">
+
+
+      </md-input-container>
+
+      <md-input-container class="md-block">
+
+          <md-icon> location_on </md-icon>
+          <input ng-model="contact.address" 
+                 type="text" 
+                 placeholder="Address">     
+
+      </md-input-container>
+
+   	<div layout="row" 
+         layout-sm="column" 
+         layout-align="end center">
+
+        <md-button class="md-raised" 
+                   flex="10" flex-sm="10" 
+                   ng-disabled="!contact.email || !contact.mobilephone" 
+                   ng-click="create(contact)">
+            <md-icon>save</md-icon>
         </md-button>
-        <md-button class="md-raised md-primary" flex="10" flex-sm="10" ui-sref="Home.Main.Menu">
-          <md-icon>arrow_back</md-icon>
+
+        <md-button class="md-raised md-primary" 
+                   flex="10" flex-sm="10" 
+                   ui-sref="Home.Main.Menu">
+            <md-icon>arrow_back</md-icon>
         </md-button>
-      </div>
+    </div>
   </md-content>
-
- 
 
 </div>

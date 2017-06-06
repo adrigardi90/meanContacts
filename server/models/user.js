@@ -9,5 +9,4 @@ var user = new Schema({
 	contacts:[]
 });
 
-
 module.exports = mongoose.model('User', user);

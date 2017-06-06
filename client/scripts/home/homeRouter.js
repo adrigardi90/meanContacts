@@ -10,7 +10,7 @@ angular.module('mean-app').config(function ($stateProvider) {
        views: {
       		"downNav": {
             templateUrl:'views/home/contentTemplate.html'
-            }
+          }
       }
     }).state('Home.Main.Menu', {
     	url:'/menu',

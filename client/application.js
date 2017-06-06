@@ -9,7 +9,8 @@ app.config(function ($urlRouterProvider, $authProvider) {
     // Parametros de configuración
 	$authProvider.loginUrl = "http://localhost:3030/api/auth/login";
 	$authProvider.signupUrl = "http://localhost:3030/api/auth/register";
-	//Save in LocalStorage with value ContactCalendar_token
+	
+    //Save in LocalStorage with value ContactCalendar_token
 	$authProvider.tokenName = "token";
 	$authProvider.tokenPrefix = "ContactCalendar";
 
@@ -17,12 +18,11 @@ app.config(function ($urlRouterProvider, $authProvider) {
 
 app.run(function ($rootScope, AuthService) {
 
-    $rootScope.$on('$stateChangeStart',
-      function (event, toState, toStateParams, fromState) {
+    //Intercept state changes
+    $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams, fromState) {
         $rootScope.toState = toState;
         $rootScope.fromState = fromState;
-        console.log(toState)
-        console.log(fromState)
+        //Check the navigation
         AuthService.getNavigation(event);
 	});
 });

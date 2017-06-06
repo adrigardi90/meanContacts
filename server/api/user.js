@@ -156,17 +156,26 @@ router.get('/deletecontact/:_id/:_phone', function(req, res){
 router.get('/infocontact/:_id/:_phone', function(req, res){
 	User.findById(req.params._id, function(err, user){
 		var info;
+		console.log(req.params._phone)
 
 		if(err)
 			res.status(400).send(err);
 
-		user.contacts.map(function(obj){
+		for(var i=0; i < user.contacts.length; i++){
+			if(user.contacts[i].mobilephone === req.params._phone){
+				info = user.contacts[i];
+				res.status(200).send(user.contacts[i]);
+			}
+				
+		}
+
+		
+		/*user.contacts.forEach(function(obj){		
 			if(obj.mobilephone === req.params._phone)
 				info = obj;
-		});
+		});*/
 
-		res.status(200).send(info);
-
+		
 	});
 
 });

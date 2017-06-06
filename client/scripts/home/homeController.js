@@ -10,7 +10,7 @@ angular.module('mean-app')
 			$window.sessionStorage.removeItem('id');
 			$state.go('login');
 		}, function error(err){
-			console.log("error");
+			console.log(err);
 		});
 	}
 }]);

@@ -8,9 +8,9 @@ angular.module('mean-app')
 		MainService.getInfoContact(id, $stateParams.phone).then(function success(data){
 			$scope.contactDetail = data.data;
 		},function error(err){
-
+			console.log(err);
 		});
 	}
-	init();
 
+	init();
 }]);

@@ -1,5 +1,6 @@
 angular.module('mean-app').config(function ($stateProvider) {
     
+    //Login state is public
     $stateProvider.state('login', {
       url: '/login',
       templateUrl: 'views/login/loginTemplate.html',
@@ -7,4 +8,4 @@ angular.module('mean-app').config(function ($stateProvider) {
       module: 'public'
     });
 
-  });
+});

@@ -16,5 +16,4 @@ exports.createToken = function(user){
 	};
 
 	return jwt.encode(payload, TOKEN);
-
 };

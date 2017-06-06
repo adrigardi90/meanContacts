@@ -42,37 +42,6 @@ angular.module('mean-app').factory('MainService',['$http','$q','$auth','$window'
 			return deferred.promise;
 		}
 
-		/*this.getUser = function(id){
-			var deferred = $q.defer();
-
-			$http({
-				method: 'GET',
-				url: 'http://localhost:3030/api/contact/' + id
-			}).then(function success(res){
-				deferred.resolve(res);
-			}, function error(err){
-				deferred.reject(err);
-			});
-
-			return deferred.promise;
-		}
-*/
-	/*	this.updateUser = function(user, id){
-			var deferred = $q.defer();
-
-			$http({
-				method: 'PUT',
-				url: 'http://localhost:3030/api/contact/' + id,
-				data: user
-			}).then(function success(res){
-				deferred.resolve(res);
-			}, function error(err){
-				deferred.reject(err);
-			});
-
-			return deferred.promise;
-		}*/
-
 		this.deleteUser = function(id){
 			var deferred = $q.defer();
 			$http({
