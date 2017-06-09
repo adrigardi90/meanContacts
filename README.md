@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/adrigardi90/meanContacts/blob/master/client/images/mean.jpg" alt="Mean Contacts Calendar" width="500" height="300"/>
+  <img src="https://github.com/adrigardi90/meanContacts/blob/master/client/images/mean.jpg" alt="Mean Contacts Calendar" width="620" height="250"/>
 </p>
 
 # meanContacts
